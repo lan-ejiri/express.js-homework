@@ -40,7 +40,7 @@
     <script>
         var friends = [];
 
-        $("#submit").on("click", function () {
+        $("#submit").on("click", function (event) {
             event.preventDefault();
             alert("Asdasd");
             var thisperson = {
@@ -48,11 +48,14 @@
                 photo: $("#pic").val().trim(),
                 scores: [$("#q1").val().trim(), $("#q2").val().trim(), $("#q3").val().trim()]
             };
-            friends.push(thisperson);
-            console.log(friends);
+            console.log(thisperson);
+            $.post("/api/friends", thisperson)
+                .then(function (data) {
+                    console.log("survey.html", data);
+                });
 
-            module.exports = thisperson;
         });
+
     </script>
 
 
