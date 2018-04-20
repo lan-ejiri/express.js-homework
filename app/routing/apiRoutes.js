@@ -49,4 +49,4 @@ module.exports = function(app) {
     console.log(friends[idx].name);
     return friends[idx];
   }
-};
+}; 
