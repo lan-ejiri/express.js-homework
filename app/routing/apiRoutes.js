@@ -9,7 +9,7 @@ module.exports = function(app) {
   });
 
   app.post("/api/friends", function(req, res) {
-    console.log("BODY", req.body);
+    // console.log("BODY", req.body);
     //friends.push(req.body);
 
     var friend = findFriend(req.body);
@@ -23,7 +23,7 @@ module.exports = function(app) {
       total += parseInt(person.scores[j]);
     }
     person.total = total;
-    console.log(person);
+    // console.log(person);
   }
 
   function findFriend(thisperson) {
@@ -41,12 +41,13 @@ module.exports = function(app) {
     for (i = 0; i < friends.length; i++) {
       diff.push(Math.abs(friends[i].total - thisperson.total));
     }
-    console.log(diff);
+    // console.log(diff);
     //find the index of the person with the smallest difference
     var idx = diff.indexOf(Math.min.apply(null, diff));
-    console.log(idx);
+    // console.log(idx);
     //get the person with the index of the smallest difference
     console.log(friends[idx].name);
     return friends[idx];
+
   }
 }; 
