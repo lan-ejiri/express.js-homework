@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/client.js"></script>
 
     <title>Survey</title>
 </head>
@@ -16,32 +15,44 @@
     <form>
         Name:
         <br>
-        <input type="text" placeholder="first name" id="firstname">
+        <input type="text" placeholder="first name" id="firstname" required>
         <br> Photo:
         <br>
-        <input type="file" name="pic" accept="image/*" id="pic">
-        <br>
-        <!-- or url? idk -->
-
-        On a scale of 1 to 5, how much do you agree with the following statements? 5 being very much agree, 1 being very much disagree,
-        3 being p neutral.
-
-
+        <input type="text" name="picurl" id="pic" required>
+        <br> On a scale of 1 to 5, how much do you agree with the following statements? 5 being very much agree, 1 being very
+        much disagree, 3 being p neutral.
         <br>Cats are the best
         <br>
-        <input type="number" name="quantity" min="1" max="5" id="q1">
+        <input type="number" name="quantity" min="1" max="5" id="q1" required>
         <br> Dogs are the best
         <br>
-        <input type="number" name="quantity" min="1" max="5" id="q2">
-        <br> Pizza the best
+        <input type="number" name="quantity" min="1" max="5" id="q2" required>
+        <br> Pizzas the best
         <br>
-        <input type="number" name="quantity" min="1" max="5" id="q3">
+        <input type="number" name="quantity" min="1" max="5" id="q3" required>
         <br>
         <button id="submit">
             Submit
         </button>
 
     </form>
+    <script>
+        var friends = [];
+
+        $("#submit").on("click", function () {
+            event.preventDefault();
+            alert("Asdasd");
+            var thisperson = {
+                name: $("#firstname").val().trim(),
+                photo: $("#pic").val().trim(),
+                scores: [$("#q1").val().trim(), $("#q2").val().trim(), $("#q3").val().trim()]
+            };
+            friends.push(thisperson);
+            console.log(friends);
+
+            module.exports = thisperson;
+        });
+    </script>
 
 
 
