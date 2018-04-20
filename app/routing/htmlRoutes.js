@@ -12,6 +12,7 @@ var PORT = process.env.PORT || 8080;
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static("./public"));
 
 // Starts the server to begin listening
 // =============================================================
@@ -24,6 +25,7 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 
+//survey page
 app.get("/survey", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/survey.html"));
 });
