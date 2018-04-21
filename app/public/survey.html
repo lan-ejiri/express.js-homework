@@ -5,53 +5,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
+
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/client.js"></script>
     <title>Survey</title>
 </head>
 
 <body>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
 
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h1>Best Match</h1>
-            <h2 id="bestname"> </h2>
-            <img id="bestpic">
+    <div class="container">
+        <div class="row">
+            <div id="myModal" class="modal">
+
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1>Best Match</h1>
+                    <h2 id="bestname"> </h2>
+                    <img id="bestpic">
+                </div>
+
+            </div>
+
         </div>
 
+
+        <div class="row jumbotron">
+            <form>
+                <h1>About You</h1>
+                <h3>Name:</h3>
+                <input type="text" placeholder="First Name" class="form-control" id="firstname" required>
+                <h3>Photo URL:</h3>
+                <input type="text" name="picurl" id="pic" class="form-control" placeholder="url" required>
+                <br>
+                <h3>On a scale of 1 to 5, how much do you agree with the following statements?</h3>
+                <h3>(5 being very much agree, 3 being p neutral, 1 being very much disagree.)</h3>
+
+                <h3>
+                    <strong>Question 1</strong>
+                    <br>Your mind is always buzzing with unexplored ideas and plans.
+                </h3>
+                <input type="number" name="quantity" min="1" max="5" class="form-control" id="q1" required>
+                <h3>
+                    <strong>Question 2</strong>
+                    <br>Generally speaking, you rely more on your experience than your imagination.
+
+                </h3>
+                <input type="number" name="quantity" min="1" max="5" class="form-control" id="q2" required>
+                <h3>
+                    <strong>Question 3</strong>
+                    <br>You find it easy to stay relaxed and focused even when there is some pressure.
+
+                </h3>
+                <input type="number" name="quantity" min="1" max="5" class="form-control" id="q3" required>
+                <h3>
+                    <strong>Question 4</strong>
+                    <br>You rarely do something just out of sheer curiosity.
+
+                </h3>
+                <input type="number" name="quantity" min="1" max="5" class="form-control" id="q4" required>
+                <h3>
+                    <strong>Question 5</strong>
+                    <br>People can rarely upset you.
+
+                </h3>
+                <input type="number" name="quantity" min="1" max="5" class="form-control" id="q5" required>
+                <h3>
+                    <strong>Question 6</strong>
+                    <br>It is often difficult for you to relate to other people’s feelings.
+
+                </h3>
+                <input type="number" name="quantity" min="1" max="5" class="form-control" id="q6" required>
+                <h3>
+                    <strong>Question 7</strong>
+                    <br>In a discussion, truth should be more important than people’s sensitivities.
+
+                </h3>
+                <input type="number" name="quantity" min="1" max="5" class="form-control" id="q7" required>
+                <h3>
+                    <strong>Question 8</strong>
+                    <br>You rarely get carried away by fantasies and ideas.
+
+                </h3>
+                <input type="number" name="quantity" min="1" max="5" class="form-control" id="q8" required>
+                <h3>
+                    <strong>Question 9</strong>
+                    <br>You think that everyone’s views should be respected regardless of whether they are supported by facts
+                    or not.
+                </h3>
+                <input type="number" name="quantity" min="1" max="5" class="form-control" id="q9" required>
+                <h3>
+                    <strong>Question 10</strong>
+                    <br>You feel more energetic after spending time with a group of people.
+
+                </h3>
+                <input type="number" name="quantity" min="1" max="5" class="form-control" id="q10" required>
+                <br>
+                <input id="submit" class="form-control" type="submit">
+
+            </form>
+        </div>
     </div>
 
 
 
-    <form>
-        Name:
-        <br>
-        <input type="text" placeholder="first name" id="firstname" required>
-        <br> Photo:
-        <br>
-        <input type="text" name="picurl" id="pic" required>
-        <br> On a scale of 1 to 5, how much do you agree with the following statements? 5 being very much agree, 1 being very
-        much disagree, 3 being p neutral.
-        <br>Cats are the best
-        <br>
-        <input type="number" name="quantity" min="1" max="5" id="q1" required>
-        <br> Dogs are the best
-        <br>
-        <input type="number" name="quantity" min="1" max="5" id="q2" required>
-        <br> Pizzas the best
-        <br>
-        <input type="number" name="quantity" min="1" max="5" id="q3" required>
-        <br>
-        <input id="submit" type="submit">
 
-    </form>
+
     <script>
         var friends = [];
 
@@ -61,20 +122,15 @@
             var thisperson = {
                 name: $("#firstname").val().trim(),
                 photo: $("#pic").val().trim(),
-                scores: [$("#q1").val().trim(), $("#q2").val().trim(), $("#q3").val().trim()]
+                scores: [$("#q1").val().trim(), $("#q2").val().trim(), $("#q3").val().trim(),$("#q4").val().trim(),$("#q5").val().trim(),$("#q6").val().trim(),$("#q7").val().trim(),$("#q8").val().trim(),$("#q9").val().trim(),$("#q10").val().trim()]
             };
             // console.log(thisperson);
             $.post("/api/friends", thisperson)
                 .then(function (data) {
-                    console.log("survey.html", data);
                     $("#bestname").text(data.name);
                     $("#bestpic").attr('src', data.photo);
                 }
                 );
-
-
-
-
         });
 
 

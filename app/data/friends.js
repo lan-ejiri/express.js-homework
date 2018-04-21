@@ -1,11 +1,3 @@
-// //somehow grab thisperson from survey.html
-// //hard coding a person for now
-// var thisperson = {
-//   name: "someone",
-//   photo: "wahatsjdflfdbdfgljk",
-//   scores: [6, 1, 4, 4, 5, 1, 2, 5, 4, 1]
-// };
-
 var friends = [
   {
     name: "Ahmed",
@@ -15,9 +7,25 @@ var friends = [
   },
   {
     name: "Sally",
-    photo: "http://via.placeholder.com/350x150",
-    scores: [1, 1, 1, 1, 1, 1, 1, 1, 4, 1]
+    photo: "http://lorempixel.com/output/people-q-c-554-480-5.jpg",
+    scores: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  },
+  {
+    name: "Alberto",
+    photo: "http://lorempixel.com/output/people-h-c-429-480-4.jpg",
+    scores: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+  },
+  {
+    name: "Bob",
+    photo: "http://lorempixel.com/output/people-h-c-429-480-6.jpgg",
+    scores: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+  },
+  {
+    name: "Catherine",
+    photo: "http://lorempixel.com/output/people-h-c-429-480-9.jpg",
+    scores: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
   }
+  
 ];
 
 module.exports = friends;
