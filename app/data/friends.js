@@ -17,7 +17,7 @@ var friends = [
   },
   {
     name: "Bob",
-    photo: "http://lorempixel.com/output/people-h-c-429-480-6.jpgg",
+    photo: "http://lorempixel.com/output/people-h-c-429-480-6.jpg",
     scores: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
   },
   {
